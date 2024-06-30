@@ -1,11 +1,13 @@
+
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-world
+  name: app-one
+  labels:
+    app: app-one
 spec:
-  type: LoadBalancer
   ports:
-  - port: 80
-    targetPort: 80
+    - port: 80
+      targetPort: 8080 # First of all there is the redirect of the  is defined in the https://github.com/paulbouwer/hello-kubernetes/blob/main/src/app/server.js
   selector:
-    app: hello-world
+    app: app-one

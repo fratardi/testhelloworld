@@ -1,22 +1,25 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: app-one
   labels:
-    app: hello-world
+    app: app-one
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-      app: hello-world
+      app: app-one
   template:
     metadata:
       labels:
-        app: hello-world
+        app: app-one
     spec:
       containers:
-      - name: hello-world
-        image: nginx:latest
-        ports:
-        - containerPort: 80
----
+      - name: app-one
+        image: paulbouwer/hello-kubernetes:1.9
+        env: 
+        - name: MESSAGE
+          value: "Hello from app-one."
+        - name: CONTAINER_IMAGE
+          value: "App1"
