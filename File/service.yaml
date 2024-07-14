@@ -8,6 +8,6 @@ metadata:
 spec:
   ports:
     - port: 80
-      targetPort: 8080 # First of all there is the redirect of the  is defined in the https://github.com/paulbouwer/hello-kubernetes/blob/main/src/app/server.js
+      targetPort: 8888 # First of all there is the redirect of the  is defined in the https://github.com/paulbouwer/hello-kubernetes/blob/main/src/app/server.js
   selector:
     app: app-one
